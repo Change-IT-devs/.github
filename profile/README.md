@@ -1,6 +1,6 @@
 # [Maximal Application<img src="https://github.com/maximal-controller/.github/assets/65526165/1165a2f3-3327-48ab-be66-13af53691ef1" alt="Example Image" style="width:40px; height:40px;">](https://maximal.vercel.app)
 
-**Админ-панель** для учебных центров, упрощает работу с записями клиентов, студентов и т.д.
+> **Админ-панель** для учебных центров, упрощает работу с записями клиентов, студентов и т.д.
 
 ### Информация для входа:
 - Тел. номер — ***+998(33)-333-33-33***
