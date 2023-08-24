@@ -2,28 +2,91 @@
 
 **Админ-панель** для учебных центров, упрощает работу с записями клиентов, студентов и т.д.
 
-
 ## Описание
 
-sfsdfsdfsdf
+***Хорошо подходит:*** для начинающих учебных центров. Цель этого проекта — повысить эффективность работы с журналами и записками. Помогает анализировать доход и результат, улучшая надежность в бухгалтерской работе.
 
-sdfsdfsdf
+***Не подходит:*** для больших и сложных работ, например, хранилище файлов, обработка платежных операции и т.д.
 
-sdfsdfdsf
+### Возможности проекта в данном моменте:
+- добавление списка клиентов;
+- добавление списка студентов;
+- группировать студенты;
+- подключение групп к преподавателям;
+- запись платежей (***это не платежная система***);
+- запись посещаемости студентов.
 
-## Table of Contents
+### Будущая реализация в плане:
+- добавление список зарплаты учителей;
+- общий доход и расход;
+- управления с ролями;
+- работа с файлами.
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+## В данном времени проект состоит из 2 главных частей:
+1. Веб интерфейс(UI) — исходники [здесь(Maximal_UI)](https://github.com/maximal-controller/Maximal_UI). Технологии в этом части:
+   - React;
+   - Sass;
+   - Vite;
+   - [Jotai](https://jotai.org) — для создание обший *state* в проекте (как *Redux*).
 
-- ## Installation
+2. Серверная часть — исходники [здесь(Maximal_Server)](https://github.com/maximal-controller/Maximal_Server). Технологии в этом части:
+   - Node.js — основная технология;
+   - Express — для оброботки **I/O** запросов на сервер;
+   - MongoDB — использован в качестве базы данных;
+   - mongoose (ODM) — создание ***Модели(Schema)*** для базы данных **MongoDB**;
+   - JWT — для обработки авторизацию.
 
-Provide step-by-step instructions on how to install your project. Be sure to include any dependencies or prerequisites that need to be set up.
+## Для запуска коды Веб интерфейса(UI):
 
+1. Скачайте или клонируйте исходники — [здесь(Maximal_UI)](https://github.com/maximal-controller/Maximal_UI);
 ```bash
-$ git clone https://github.com/your-username/your-project.git
-$ cd your-project
-$ npm install  # Or any other package manager you're using!
+$ git clone https://github.com/maximal-controller/Maximal_UI.git
+$ cd Maximal_UI
 ```
+
+2. Установите пакеты с помощью ***npm***:
+```bash
+$ npm install 
+```
+
+3. Создайте новый файл с названием `.env` и добавьте нужные переменные(***Environment Variables***);
+```env
+VITE_BASE_URL=<это URL на серверная часть, в текущем формате http://example.com >
+// Если еще не запускали сервер,
+// вы можете написать URL текущую удаленную сервер — https://talented-blazer-fawn.cyclic.app
+```
+
+4. Запускайте проект локально:
+```bash
+$ npm run dev
+```
+
+## Для запуска коды Серверную часть(Backend):
+
+1. Скачайте или клонируйте исходники — [здесь(Maximal_server)](https://github.com/maximal-controller/Maximal_Server);
+```bash
+$ git clone https://github.com/maximal-controller/Maximal_Server.git
+$ cd Maximal_Server
+```
+
+2. Установите пакеты с помощью ***npm***:
+```bash
+$ npm install 
+```
+
+3. Создайте новый файл с названием `.env` и добавьте нужные переменные(***Environment Variables***);
+```env
+PORT=<порт для запуска сервера, например "5000|8080">
+JWT_EXPIRE=<определяет время для истекание JWT токен, например, "30m|15m|1h" >
+ACCESS_TOKEN_SECRET=<секретная слова для JWT токен>
+ATLAS_URI=<mongodb подключение URI>
+// Вы сможете использовать тестовую базу данных,подключая этот URI "mongodb+srv://Dilrozbek_Raximov:931897318Rd@cluster0.e9gps.mongodb.net/maximal-demo"
+```
+
+4. Запускайте проект локально:
+```bash
+$ npm start
+```
+
+## Требования
+- Node.js v16.0.0 или новее (предпочтительно v18).
